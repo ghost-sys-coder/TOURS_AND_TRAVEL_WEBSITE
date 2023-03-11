@@ -1,0 +1,104 @@
+<%- include("partials/header.ejs") %> 
+
+<!-- header section starts -->
+<%- include("partials/navbar.ejs")  %> 
+<!-- header section ends -->
+
+<section class="sign-up" id="sign-up">
+    <a href="/" class="logo"><span>T</span>ravelStar</a>
+    <h1 class="heading">Join to unlock the best of TravelStar</h1>
+
+    <form class="form" id="form">
+        <div class="flex">
+            <div class="container">
+                <label for="firstName">first name</label>
+                <input type="text" name="firstName" id="firstName" placeholder="First Name...">
+                <div class="firstName error"></div>
+            </div>
+    
+            <div class="container">
+                <label for="lastName">last name</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Last Name...">
+                <div class="lastName error"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <label for="email">Email address</label>
+            <input type="email" name="email" id="email">
+            <div class="email error"></div>
+        </div>
+
+        <div class="container">
+            <label for="password">Create a password</label>
+            <div class="password-field">
+                <input style="text-transform: none;" type="text" name="password" id="password">
+                <i class="fas fa-eye"></i>
+            </div>
+            <div class="password error"></div>
+        </div>
+
+        <button class="btn">join</button>
+    </form>
+
+    <div class="spacer">
+        <div class="space"></div>
+        <h2>Already a member?</h2>
+        <div class="space"></div>
+    </div>
+    <span class="login"><a href="/">Sign in</a>using your TravelStar Account</span>
+</section>
+
+<script>
+    const registerPage = document.querySelector(".sign-up");
+    const signUpForm = registerPage.querySelector("form");
+
+    /** get the errors */
+    const firstNameError = signUpForm.querySelector(".firstName.error");
+    const lastNameError = signUpForm.querySelector(".lastName.error");
+    const emailError = signUpForm.querySelector(".email.error");
+    const passwordError = signUpForm.querySelector(".password.error");
+
+    signUpForm.addEventListener("submit", async (event)=> {
+        event.preventDefault();
+
+        /** reset errors */
+        firstNameError.textContent = "";
+        lastNameError.textContent = "";
+        emailError.textContent = "";
+        passwordError.textContent = "";
+
+
+        /** get the values */
+        const firstName = signUpForm.firstName.value;
+        const lastName = signUpForm.lastName.value;
+        const email = signUpForm.email.value;
+        const password = signUpForm.password.value;
+
+        /** post request servers */
+        const res = await fetch("/register", {
+            method: "POST",
+            body: JSON.stringify({firstName, lastName, email, password}),
+            headers: {"Content-Type": "application/json"}
+        })
+
+        const data = await res.json();
+        console.log(data)
+        if(data.errors){
+            firstNameError.textContent = data.errors.firstName;
+            lastNameError.textContent = data.errors.lastName;
+            emailError.textContent = data.errors.firstName;
+            passwordError.textContent = data.errors.password;
+        }
+        if(data.newUser){
+            location.assign("/");
+        }
+    })
+</script>
+<!-- login form container starts -->
+
+<%- include("partials/loginForm.ejs")  %> 
+
+<!-- login form container ends -->
+
+<%- include("partials/footer.ejs")  %> 

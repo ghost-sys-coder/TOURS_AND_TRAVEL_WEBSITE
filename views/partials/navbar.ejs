@@ -1,0 +1,32 @@
+<header>
+
+    <div class="fas fa-bars menu-bar" id="menu-bar"></div>
+
+    <a href="/" class="logo"><span>T</span>ravelStar</a>
+
+    <nav class="navbar">
+        <a href="#home"  rel="noopener noreferrer">home</a>
+        <a href="#book" rel="noopener noreferrer">book</a>
+        <a href="#packages" rel="noopener noreferrer">packages</a>
+        <a href="#services" rel="noopener noreferrer">services</a>
+        <a href="#gallery" rel="noopener noreferrer">gallery</a>
+        <a href="#review"  rel="noopener noreferrer">review</a>
+        <a href="#contact" rel="noopener noreferrer">contact</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-search search-btn" id="search-btn"></i>
+        <i class="fa fa-user login-btn" id="login-btn"></i>
+        <a href="/api/cart/getcart">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <% if(user){ %>
+            <a href="/logout">Logout</a>
+        <% } %> 
+        
+    </div>
+    <form action="/" class="search-bar-container">
+        <input type="search" name="search-bar" id="search-bar" placeholder="search here...">
+        <label for="search-bar" class="fas fa-search"></label>
+    </form>
+</header>

@@ -1,0 +1,233 @@
+<%- include("partials/header.ejs") %> 
+
+<!-- header section starts -->
+<%- include("partials/navbar.ejs")  %> 
+<!-- header section ends -->
+
+<!-- login form container starts -->
+
+<%- include("partials/loginForm.ejs")  %> 
+
+<!-- login form container ends -->
+
+<!--home section starts  -->
+
+<section class="home" id="home">
+    <div class="content">
+        <h3>the adventure is worthwhile</h3>
+        <p>discover new places with us, the adventure awaits</p>
+        <a href="/api/booking/packages" class="btn">discover more</a>
+    </div>
+
+    <div class="controls">
+        <span class="vid-btn active" data-src="/assets/images/vid-1.mp4"></span>
+        <span class="vid-btn" data-src="/assets/images/vid-2.mp4"></span>
+        <span class="vid-btn" data-src="/assets/images/vid-3.mp4"></span>
+        <span class="vid-btn" data-src="/assets/images/vid-4.mp4"></span>
+    </div>
+
+    <div class="video-container">
+        <video src="/assets/images/vid-1.mp4" id="video-slider" class="video-slider"></video>
+    </div>
+</section>
+<!-- home section ends -->
+
+
+<!-- booking section starts -->
+
+<section class="book" id="book">
+<h1 class="heading">
+    <span>b</span>
+    <span>o</span>
+    <span>o</span>
+    <span>k</span>
+    <span class="space"></span>
+    <span>n</span>
+    <span>o</span>
+    <span>w</span>
+</h1>
+
+<div class="row">
+    <div class="image">
+        <img src="/assets/images/book-img.svg" alt="booking section">
+    </div>
+    <form action="/" id="home--page-booking-form">
+        <div class="inputBox">
+            <h3>where to</h3>
+            <input type="text" name="location" id="location" placeholder="destination...">
+        </div>
+        <div class="inputBox">
+            <h3>how many</h3>
+            <input type="number" name="guests" id="guests" min="0">
+        </div>
+        <div class="inputBox">
+            <h3>arrivals</h3>
+            <input type="date" name="arrival" id="arrival" min="1">
+        </div>
+        <div class="inputBox">
+            <h3>departure</h3>
+            <input type="date" name="departure" id="departure">
+        </div>
+        <input type="submit" value="book now" class="btn">
+    </form>
+</div>
+</section>
+<!-- booking section ends -->
+
+<!-- packages section starts -->
+<section class="packages" id="packages">
+    <h1 class="heading">
+        <span>p</span>
+        <span>a</span>
+        <span>c</span>
+        <span>k</span>
+        <span>a</span>
+        <span>g</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+
+    <div class="box-container">
+        
+    </div>
+</section>
+<!-- packages section ends -->
+
+<!-- services section starts -->
+<section class="services" id="gallery">
+    <h1 class="heading">
+        <span>s</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>i</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-hotel"></i>
+            <h3>affordable</h3>
+            <p>Access To The Most Affordable, Spacious, Comforting,And Luxury Hotels With All The Amenities You May Need. These Also Happen To Be Easily Accessible And Will Make Your Stay Worthwhile.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-utensils"></i>
+            <h3>great meals</h3>
+            <p>Our Meals Are Definitely Top Notch Prepared By Very Talented Professional Chefs. They Are Served On Time According To Your Liking And Will Compliment Your Adventures With Us.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-user-shield"></i>
+            <h3>safety</h3>
+            <p>Your Safety Is Very Key To Us. We Provide You With Trained And Experience Guides, And Safety Equipment Is Available In Plenty Where Need Be.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-flag"></i>
+            <h3>around uganda</h3>
+            <p>We Give An All Around Experience With Our Different Tour Packages Around The Entire Country. Explore The Whole Of Uganda With Us</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-car"></i>
+            <h3>fast travel</h3>
+            <p>Safe And First Travel Is Available.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-hiking"></i>
+            <h3>adventure</h3>
+            <p>We Offer A Variety Of Activities For You To Explore And Enjoy, From Hiking, Cycling, Trekking To Bird-Watching Among Others.</p>
+        </div>
+    </div>
+</section>
+<!-- services section ends -->
+
+<!-- gallery section starts  -->
+<section class="gallery" id="gallery">
+    <h1 class="heading">
+        <span>g</span>
+        <span>a</span>
+        <span>l</span>
+        <span>l</span>
+        <span>e</span>
+        <span>r</span>
+        <span>y</span>
+    </h1>
+
+    <div class="box-container">
+
+    </div>
+</section>
+<!-- gallery section end  -->
+
+<!-- reviews section starts -->
+
+<section class="reviews">
+    <h1 class="heading">
+        <span>r</span>
+        <span>e</span>
+        <span>v</span>
+        <span>i</span>
+        <span>e</span>
+        <span>w</span>
+        <span>s</span>
+    </h1>
+
+        <!-- main slider main container -->
+        <div class="review-slider swiper">
+            <!-- addition slider container -->
+            <div class="swiper-wrapper">
+                <!-- slider -->
+            </div>
+        </div>
+</section>
+
+<!-- reviews section ends -->
+
+<!-- contact section starts -->
+<section class="contact" id="contact">
+    <h1 class="heading">
+        <span>c</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
+        <span>c</span>
+        <span>t</span>
+    </h1>
+    <div class="row">
+        <div class="image">
+            <img src="/assets/images/contact-img.svg" alt="contact">
+        </div>
+        <form class="contact--form" id="contact--form" action="/">
+            <div class="inputBox">
+                <input type="text" name="fullname" id="fullname" placeholder="enter your name...">
+                <input type="email" name="email" id="email" placeholder="enter your email">
+            </div>
+            <div class="inputBox">
+                <input type="tel" name="telephone" id="telephone" placeholder="provide telephone...">
+                <input type="text" name="subject" id="subject" placeholder="subject...">
+            </div>
+            <textarea placeholder="leave a message" name="message" id="message" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+    </div>
+</section>
+<!-- contact section ends -->
+
+<!-- brands section starts -->
+<section class="brand-container">
+    <div class="swiper-container brand-slider swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/assets/images/1.jpg" alt="brand"></div>
+            <div class="swiper-slide"><img src="/assets/images/2.jpg" alt="brand"></div>
+            <div class="swiper-slide"><img src="/assets/images/3.jpg" alt="brand"></div>
+            <div class="swiper-slide"><img src="/assets/images/4.jpg" alt="brand"></div>
+            <div class="swiper-slide"><img src="/assets/images/5.jpg" alt="brand"></div>
+            <div class="swiper-slide"><img src="/assets/images/6.jpg" alt="brand"></div>
+        </div>
+    </div>
+</section>
+<!-- brands section ends -->
+
+
+
+<%- include("partials/footer.ejs")  %> 

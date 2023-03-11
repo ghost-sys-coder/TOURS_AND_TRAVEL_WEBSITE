@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %> 
+
+<!-- header section starts -->
+<%- include("partials/navbar.ejs")  %> 
+<!-- header section ends -->
+
+<!-- login form container starts -->
+
+<%- include("partials/loginForm.ejs")  %> 
+
+<!-- login form container ends -->
+
+
+
+<!-- all packages pages -->
+
+<section class="content--grid">
+    <% packages.forEach(package => { %>
+        <div class="grid--item">
+            <div class="image">
+                <img src=<%= package.imgUrls[0] %> alt="image">
+            </div>
+            <div class="content">
+                <h1 class="destination"><i class="fas fa-map-marker-alt"></i> <%= package.destination %></h1>
+                <h2 class="title"><%= package.title %></h2>
+                <p class="description"><%= package.description.slice(0, 200) %></p>
+                <p class="price">$<%= package.price %></p>
+                <a class="btn" href="/api/booking/:<%= package.destination %>">book</a>
+            </div>
+        </div>
+    <% }); %>
+</section>
+
+
+
+<%- include("partials/footer.ejs") %>

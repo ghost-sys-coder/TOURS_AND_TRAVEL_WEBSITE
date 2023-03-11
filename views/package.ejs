@@ -1,0 +1,616 @@
+<%- include("partials/header.ejs")  %> 
+<%- include("partials/navbar.ejs")  %> 
+<%- include("partials/loginForm.ejs")  %> 
+
+
+<section class="single-package">
+
+        <div class="container">
+            <div class="images">
+                <div class="buttons">
+                    <i class="fas fa-arrow-left" id="left"></i>
+                    <i class="fas fa-arrow-right" id="right"></i>
+                </div>
+                <% packageImages.forEach((image)=> { %>
+                    <img class="slide" src=<%= image %> alt="image">
+                <% }) %> 
+                <p class="images-tag"><i class="fas fa-image"></i><%= packageImages.length %> Photos </p>
+            </div>
+
+            <div class="details">
+                <h1 class="package-title"><%= packageTitle %> </h1>
+                <p class="ratings"><%= packageRatings.length %> <a href="#">reviews</a></p>
+                <div class="desc-container">
+                    <h3 class="description">
+                        <span id="less-text"><%= packageDescription.substring(0, 400) %></span>
+                        <span id="more-text"><%= packageDescription.substring(400, packageDescription.length) %> </span>
+                    </h3>
+                    <button class="read">show more</button>
+                </div> 
+                <div class="pricing-container">
+                    <div class="price">
+                        <h4>from</h4>
+                        <h2>$<%= price %> </h2>
+                        <h4>per adult (price varies by group size)</h4>
+                    </div>
+                    <a href="#" style="text-align: center;" id="check-btn" class="btn">check availability</a>
+                </div>
+                
+                <div class="more-details">
+                    <i class="fas fa-people-carry"><span>Ages <%= age %> </span></i>
+                    <i class="fas fa-clock"><span>Duration <%= duration %> </span></i>
+                    <i class="fas fa-history"><span>Start time: Check availability </span></i>
+                    <i class="fas fa-mobile"><span>Ticket Mobile: Mobile</span></i>
+                </div>
+                <div class="FAQ">
+                    <div class="top">
+                        <h3>What's included</h3>
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </div>
+                    <div class="bottom">
+                        <ul class="lists">
+                            <li class="item">Breakfast</li>
+                            <li class="item">Lunch</li>
+                            <li class="item">Dinner</li>
+                            <li class="item">National Park fees</li>
+                            <li class="item">Guaranteed to skip lines</li>
+                            <li class="item">breakfast</li>
+                        </ul>
+                        <h3>What's not included?</h3>
+                        <ul class="lists">
+                            <li class="item">Alcoholic drinks (available for purchase)</li>
+                        </ul>
+                    </div>
+
+                    <div class="top">
+                        <h3>Departure and return</h3>
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </div>
+                    <div class="bottom">
+                        <h3>Departure details</h3>
+                        <ul class="lists">
+                            <li class="item">Traveller pickup is offered</li>
+                            <li class="item">Any location within Uganda is accepted</li>
+                            <li class="item">Entebbe Airport, Entebbe Uganda</li>
+                            <li class="item">Hotel pickup is offered. View our checkout page to see if yours is listed among the pickup locations</li>
+                        </ul>
+                    </div>
+
+                    <div class="top">
+                        <h3>Accessibility</h3>
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </div>
+                    <div class="bottom">
+                        <ul class="lists">
+                            <li class="item">Wheelchair accessible</li>
+                            <li class="item">Stroller accessible</li>
+                            <li class="item">Infant seats accessible</li>
+                            <li class="item">Transportation is Wheelchair accessible</li>
+                        </ul>
+                        <p>If you have any further questions about Accessibility, we would happy to help. Just reach us on <a href="tel:+256 331 242627"></a></p>
+                    </div>
+
+                    <div class="top">
+                        <h3>Additional information</h3>
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </div>
+                    <div class="bottom">
+                        <ul class="lists">
+                            <li class="item">Confirmation will be received at the time of booking</li>
+                        <li class="item">Child rate only applies when the child is sharing with two paying adults</li>
+                        <li class="item">Children must be accompanied by an adult</li>
+                        <li class="item">Infant meals are not include</li>
+                        <li class="item">Dress code is smart casual</li>
+                        <li class="item">This experience requires good weather. If it is cancelled due to bad weather, you will be offered a different date or a full refund.</li>
+                        </ul>
+                    </div>
+
+                    <div class="top">
+                        <h3>Cancellation policy</h3>
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </div>
+                    <div class="bottom">
+                        <p>For a full refund, cancel atleast 24 hours in advance of the start date of the experience</p>
+                    </div>
+
+                    <div class="top">
+                        <h3>Covid safety</h3>
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </div>
+                    <div class="bottom">
+                        <h3>What you can expect when you visit?</h3>
+                       <ul class="lists">
+                            <li class="item">Regular temperature checks for staff</li>
+                            <li class="item">Regularly sanitized high traffic areas</li>
+                            <li class="item">Temperature checks for the tour participants upon arrival</li>
+                            <li class="item">Gear/equipment sanitized between use</li>
+                            <li class="item">Face masks required for travellers in public areas</li>
+                            <li class="item">Face masks provided for travellers</li>
+                            <li class="item">Guides required to regularly wash hands</li>
+                            <li class="item">Hand sanitizer available to travellers and staff</li>
+                            <li class="item">Transportation vehicles regularly sanitized</li>
+                            <li class="item">Contactless payments for gratuities and add-ons</li>
+                            <li class="item">Social distancing enforced throughout the experience</li>
+                       </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div style="display: none;" class="image-gallery">
+            <div class="gallery-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="images-container">
+                <% packageImages.forEach((image)=> { %>
+                    <div class="image">
+                        <img src=<%= image %>  alt="image">
+                    </div>
+               <% }) %> 
+            </div>
+        </div>
+
+        <!-- cart modal starts -->
+        <div class="cart--modal">
+            <div class="close--modal">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="cart-content">
+                <h1 class="title"><%= packageTitle %></h1>
+                <p class="alert">Free cancellation. Cancellations should take place 2 days before departure</p>
+
+                <div class="cart--form-container">
+                    <form class="cart--form">
+                        <div class="input--box">
+                            <input type="date" name="chosen-date" id="chosen-date">
+                        </div>
+                        <div id="guests-btn" class="input--box">
+                           <!-- <i class="fas fa-users"></i> -->
+                           <input id="guest-value" type="number" min="0" placeholder="Number of Guests...">
+                        </div>
+
+                        <div class="container">
+                            <h2 class="title"><%= packageTitle %></h2>
+    
+                            <p class="reserve">Reserve Now & Pay Later Eligible</p>
+                            <p>Pick up included</p>
+                            <p class="guests"><span id="guests-number">2</span> Adults X $<span><%= price %></span></p>
+                            <h4>Total $<span class="total-price"></span></h4>
+                        </div>
+
+                        <div class="submit-btn">
+                            <% if(user){ %>
+                                <button class="btn">Add to Cart</button>
+                            <% } %>
+
+                            <% if(!user){ %>
+                                <a href="/register" class="btn">Sign In To Book</a>
+                            <% } %>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- cart modal closes -->
+
+        <!-- post a comment section -->
+        <% if(!user) { %>
+            <div class="contribute-reviews">
+                <a class="white-btn" href="/register ">Log in to Write a review</a>
+            </div>
+        <% } %> 
+
+        <!-- comment form section -->
+       <% if(user){ %>
+        <div class="comment__form-container">
+            <h1 class="form--heading">Leave a Review</h1>
+            <form class="comment--form" id="comment--form">
+                <label for="review">Leave a review <span>(required)</span></label>
+                <textarea name="review" id="review" cols="30" rows="5" placeholder="What was your favorite part of your experience?" required ></textarea>
+                <label for="review-title">Give your review a title <span>(required)</span></label>
+                <input type="text" id="review-title" name="title" placeholder="Summarize your experience">
+                <label for="date">When did you go? <span>(required)</span></label>
+                <select name="date" id="date">
+                    <option value="select">select one</option>
+                    <option value="january">january 2023</option>
+                    <option value="february">february 2023</option>
+                    <option value="march">march 2023</option>
+                    <option value="april">april 2023</option>
+                    <option value="may">may 2023</option>
+                    <option value="june">june 2023</option>
+                    <option value="july">july 2023</option>
+                    <option value="august">august 2023</option>
+                    <option value="september">september 2023</option>
+                    <option value="october">october 2023</option>
+                    <option value="november">november 2023</option>
+                    <option value="december">december 2023</option>
+                </select>
+                <input type="file" name="file" id="file" style="display: none;">
+                <h3>upload image</h3>
+                <div class="image--container" onclick="document.getElementById('file').click()">
+                    <i class="icon fas fa-camera"></i>
+                </div>
+                <button class="btn">submit review</button>
+            </form>
+        </div>
+       <% } %> 
+
+       <!-- comments slider -->
+       <div class="comments-slider swiper">
+        <h1 class="heading">About the Operator</h1>
+        <p class="operator-text">This experience only has a few reviews, but you can read what other travellers are saying.</p>
+
+        <div class="swiper-wrapper">
+            
+        </div>
+       </div>
+
+        <!-- similar experiences section -->
+
+        <div class="similar-experiences">
+            <h1 class="heading">Similar Experiences</h1>
+            <!-- main swiper container -->
+            <div class="swiper similar-experiences-wrapper">
+
+                <!-- swiper slider pagination -->
+                <div class="swiper-buttons">
+                    <i class="fas fa-arrow-left" id="swiper-button-prev"></i>
+                    <i class="fas fa-arrow-right" id="swiper-button-next"></i>
+                </div>
+                <!-- additional swiper container -->
+                <div class="swiper-wrapper">
+                    <% package.forEach((item)=> { %>
+                        <a href="/api/booking/:<%= item.destination %> " class="swiper-slide">
+                            <img src=<%= item.imgUrl %>  alt="image">
+                            <h2><%= item.title %></h2>
+                            <div class="stars">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>  
+                            </div>
+                            <h4>from $<%= item.price %> per adult </h4>
+                        </a>
+                    <% }) %> 
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<%- include("partials/footer.ejs")  %> 
+
+<script>
+    const singleUser = '<%- JSON.stringify(user) %>'
+    const singleUserParse = JSON.parse(singleUser);
+    
+    const packageContainer = document.querySelector(".single-package")
+    const description = packageContainer.querySelector(".description");
+    const lessText = description.querySelector("#less-text");
+    const moreText = description.querySelector("#more-text");
+    const readBtn = packageContainer.querySelector('.read');
+
+    const FAQ = document.querySelector(".FAQ");
+    const headers = FAQ.querySelectorAll(".top");
+    const content = FAQ.querySelectorAll(".bottom");
+
+    const container = packageContainer.querySelector(".container");
+    let imageSlides = container.querySelectorAll(".slide");
+    const leftBtn = container.querySelector("#left");
+    const rightBtn = container.querySelector("#right");
+    let current = 0;
+
+    const imageGallery = packageContainer.querySelector(".image-gallery");
+    const galleryClose = imageGallery.querySelector(".gallery-close");
+    const galleryOpen = container.querySelector(".images-tag");
+    
+
+ 
+
+    window.onload = () => {
+        moreText.classList.add("hide-text");
+        if(lessText.innerHTML.length < 400){
+            readBtn.classList.add("hide-text")
+        }
+        content.forEach(item => {
+            item.classList.add("hide")
+        })
+
+
+    }
+    const toggleText = () => {
+        moreText.classList.toggle("hide-text")
+
+        if(readBtn.innerHTML === "show more") {
+            readBtn.innerHTML = "show less"
+        } else {
+            readBtn.innerHTML = 'show more'
+        }
+    }
+
+    readBtn.addEventListener("click", toggleText);
+
+
+    /** 
+     * ! FAQ SECTION
+    */
+
+    headers.forEach((header)=> {
+        header.addEventListener("click", ()=> {
+            header.nextElementSibling.classList.toggle("hide");
+            const svg = header.querySelector(".fas");
+            svg.classList.toggle("fa-arrow-circle-up");
+        })
+    })
+
+
+    /**
+     * ! IMAGE SLIDER SECTION
+    */
+
+    // Clear All Images
+    const reset = () =>{
+        imageSlides.forEach((image)=> {
+            image.style.display = "none";
+        })
+    }
+
+    // Init Slider
+    const startSlide = () => {
+        reset();
+        imageSlides[0].style.display = "block"
+    }
+
+
+    // Slide Prev
+    const slideLeft = () => {
+        reset();
+        imageSlides[current - 1].style.display = "block";
+        current --;
+    }
+
+    // Left arrow click
+    leftBtn.addEventListener("click", ()=> {
+        if(current === 0) {
+            current = imageSlides.length;
+        }
+        slideLeft();
+    })
+
+    // Slide Next
+    const slideNext = () => {
+        reset();
+
+        imageSlides[current + 1].style.display = "block";
+        current++;
+    }
+
+    // Right Arrow Click
+    rightBtn.addEventListener("click", ()=> {
+        if(current === imageSlides.length - 1) {
+            current = -1
+        }
+        slideNext();
+    })
+
+    startSlide();
+
+    /** 
+     * ! Image Gallery
+    */
+
+    galleryOpen.addEventListener("click", () => {
+        imageGallery.style.display = "flex"
+    })
+    galleryClose.addEventListener("click", ()=> {
+        imageGallery.style.display = "none"
+    })
+
+    /** 
+     * ! Similar Experiences Section
+    */
+
+    let similarExperiencesSwiper = new Swiper(".swiper", {
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+    },
+    navigation: {
+        nextEl: "#swiper-button-next",
+        prevEl: "#swiper-button-prev"
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3
+        }
+    }
+})
+   
+/** 
+ * ! COMMENT FORM SECTION
+*/
+
+
+if(singleUserParse) {
+const commentForm = packageContainer.querySelector(".comment--form");
+const reviewInput = commentForm.review;
+const titleInput = commentForm.title;
+const dateInput = commentForm.date;
+const fileInput = commentForm.file;
+
+const commentImage = commentForm.querySelector(".image--container");
+const svg = commentImage.querySelector(".icon");
+
+fileInput.onchange = (event) => {
+    const fileReader = new FileReader();
+
+    fileReader.onload = function(){
+
+        svg.style.display = "none";
+        const image = document.createElement("img");
+        image.setAttribute("src", fileReader.result);
+        commentImage.appendChild(image);
+    }
+
+    fileReader.readAsDataURL(event.target.files[0])
+}
+
+commentForm.addEventListener("submit", async (event)=> {
+    event.preventDefault();
+    const review = reviewInput.value;
+    const title = titleInput.value;
+    const date = dateInput.value;
+    const file = fileInput.files[0];
+
+
+
+    const formData = new FormData();
+    formData.append("review", review);
+    formData.append("title", title);
+    formData.append("date", date);
+    formData.append("file", file)
+
+  
+    const response = await fetch(`http://localhost:5000/api/comment/<%= packageTitle %>`, {
+        method: "POST",
+        body: formData,
+    })
+
+    if(response.ok){
+        location.assign("/api/booking/:<%= packageDestination %>")
+    }
+})
+
+}
+
+
+
+/**
+ * ! Retrieving comments from the database
+ */
+const commentSection = packageContainer.querySelector(".comments-slider");
+const commentSlider = commentSection.querySelector(".swiper-wrapper");
+
+const getComments = async () => {
+    await fetch("http://localhost:5000/api/comment/:<%= packageTitle %>")
+    .then((response) => response.json())
+    .then((data) => (
+        commentSlider.innerHTML = data.map(item => {
+            const { userInfo, review, image, title } = item;
+            return `
+                <div class="swiper-slide">
+                    <h4 class="username">${userInfo.firstName}</h4>
+                    <div class="image">
+                        <img src="/${image}" alt="" />    
+                    </div>
+                    <h2 class="title">${title}</h2>
+                    <p class="review">${review}</p>
+                </div>
+            `
+        }).join("")
+    ))
+}
+
+getComments();
+
+let commentSwiper = new Swiper(".comments-slider .swiper", {
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3
+        }
+    }
+})
+
+/**
+ * ! CART MODAL
+ */
+
+ const cartModal = packageContainer.querySelector(".cart--modal");
+ const checkButton = packageContainer.querySelector("#check-btn");
+ const closeModel = cartModal.querySelector(".close--modal");
+
+ checkButton.addEventListener("click", (event) => {
+    cartModal.classList.toggle("active")
+ })
+
+ closeModel.onclick = (event) => {
+    cartModal.classList.remove("active");
+ }
+
+ window.onscroll = () => {
+    cartModal.classList.remove("active")
+ }
+
+const cartForm = cartModal.querySelector(".cart--form");
+const priceContainer = cartModal.querySelector(".container");
+const guestNumber = cartForm.querySelector("#guests-number");
+const guestInputValue = cartForm.querySelector("#guest-value");
+const chosenDate = cartForm.querySelector("#chosen-date");
+const totalPrice = cartForm.querySelector(".total-price");
+const addToCartBtn = cartForm.querySelector("button");
+
+const price = '<%- JSON.stringify(price) %>' 
+const packageTitle = '<%- JSON.stringify(packageTitle) %>'
+const packageDescription = '<%- JSON.stringify(packageDescription) %>'
+const packageDestination = '<%- JSON.stringify(packageDestination) %>'
+const packageImages = '<%- JSON.stringify(packageImages) %>'
+
+guestInputValue.onchange = (event) => {
+    guestNumber.textContent = guestInputValue.value;
+    totalPrice.textContent = (guestInputValue.value * price).toFixed(2);
+}
+
+console.log(addToCartBtn)
+addToCartBtn.addEventListener("click", async (event)=> {
+    event.preventDefault();
+    
+    const response = await fetch("/api/cart/add-to-cart", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "include",
+        body: JSON.stringify({
+            packageTitle: JSON.parse(packageTitle),
+            packageDescription: JSON.parse(packageDescription),
+            packageDestination: JSON.parse(packageDestination),
+            packageImages: JSON.parse(packageImages),
+            availableDate: chosenDate.value,
+            totalPrice: totalPrice.textContent
+        })
+    });
+    
+    if(response.ok) {
+        cartModal.classList.remove("active");
+        location.assign("/api/cart/getcart")
+    }
+
+})
+
+
+</script>

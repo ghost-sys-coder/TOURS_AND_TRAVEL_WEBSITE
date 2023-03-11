@@ -1,0 +1,82 @@
+<%- include("partials/header.ejs")  %> 
+<%- include("partials/navbar.ejs")  %> 
+<%- include("partials/loginForm.ejs")  %> 
+
+
+<section class="comment-page">
+    <div class="container">
+        <div class="package-info">
+            <div class="image">
+                <img src=<%= image %>  alt="image">
+            </div>
+            <div class="content">
+                <h1 class="title"><%= title %> </h1>
+                <p class="desc"><%= description %><span class="dots">...</span></p>
+                <p class="author">By <span>travelstar</span></p>
+            </div>
+        </div>
+
+        <div class="user-comments">
+            <form class="comment-form" id="comment-form" enctype="multipart/form-data">
+                <label for="review">Leave a review <span>(required)</span></label>
+                <textarea name="review" id="review" cols="30" rows="5" placeholder="What was your favorite part of your experience?" required ></textarea>
+                <label for="review-title">Give your review a title <span>(required)</span></label>
+                <input type="text" id="review-title" name="title" placeholder="Summarize your experience">
+                <label for="date">When did you go? <span>(required)</span></label>
+                <select name="date" id="date">
+                    <option value="select">select one</option>
+                    <option value="january">january 2023</option>
+                    <option value="february">february 2023</option>
+                    <option value="march">march 2023</option>
+                    <option value="april">april 2023</option>
+                    <option value="may">may 2023</option>
+                    <option value="june">june 2023</option>
+                    <option value="july">july 2023</option>
+                    <option value="august">august 2023</option>
+                    <option value="september">september 2023</option>
+                    <option value="october">october 2023</option>
+                    <option value="november">november 2023</option>
+                    <option value="december">december 2023</option>
+                </select>
+
+                <!-- <div class="image--container">
+                    <h3>Upload a photo</h3>
+                    <div class="profile-image" onclick="document.getElementById('file-upload').click()">
+                        <i id="camera-icon" class="fas fa-camera"></i>
+                    </div>
+                    <input type="file" name="file" id="file-upload" accept="image/*" >
+                </div> -->
+                <div class="terms">
+                    <input type="checkbox" name="terms" id="terms">
+                    <label for="terms">Tripadvisor wishes to ensure that reviewers are not affiliated in any way with the establishment they are reviewing. By checking this box, you certify that you are not employed by the establishment, are not related to anyone employed there, and do not otherwise have a business or personal relationship with the owners or managers of this establishment or a competitor that might bias your review. In addition to being a violation of our terms of service and an unethical practice, committing fraud on reviews is also prohibited by the law and regulations in many jurisdictions [see (UCP 2005/29/EC) and (FTC 16CFR Part 255)]. Please see our Content Integrity Policy for more information.</label>
+                </div>
+                <button type="submit">continue</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+   
+   const form = document.querySelector(".comment-form");
+   const review = form.review;
+   const title = form.title;
+   const date = form.date;
+
+   form.addEventListener("submit", async (event)=> {
+    event.preventDefault();
+    
+    const response = await fetch("http://localhost:5000/api/comment-data", {
+        method: "POST",
+        body: {
+            review: review.value,
+            title: title.value,
+            date: date.value
+        },
+        headers: {"Content-Type": "application/json"}
+    });
+   })
+    
+</script>
+
+<%- include("partials/footer.ejs")  %> 
